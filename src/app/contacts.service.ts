@@ -38,7 +38,7 @@ export class ContactsService {
 
   deleteContact(delid: number): void{
     const url:string = 'http://localhost:30030/contacts/delete';
-    const delbody = JSON.stringify({id:delid});
+    const delbody = {id: delid};
     const options = {
       body: delbody,
       headers: new HttpHeaders()

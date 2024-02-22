@@ -14,9 +14,9 @@ export class ContactDeleteComponent implements OnInit{
 
   constructor(private contactsService: ContactsService,
     public dialogRef: MatDialogRef<ContactDeleteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { conactId:number},
+    @Inject(MAT_DIALOG_DATA) public data: { contactId:number},
     private router: Router){
-      this.contactId=data.conactId;
+      this.contactId=data.contactId;
     }
   ngOnInit() {}
 

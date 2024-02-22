@@ -40,7 +40,7 @@ export class ContactHomeComponent implements OnInit {
     this.router.navigate(['/contact',row.id])
   }
 
-  openDeleteDialog(delid: number):void{
-    const dilogRef = this.dialog.open(ContactDeleteComponent, {data: {contactId:delid}});
+  openDeleteDialog(contactId: number):void{
+    const dilogRef = this.dialog.open(ContactDeleteComponent, {data: {contactId:contactId}});
   }
 }
