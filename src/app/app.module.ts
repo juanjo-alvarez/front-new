@@ -11,17 +11,22 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import {MatDialogModule } from '@angular/material/dialog';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { ContactUpdateComponent } from './contact-update/contact-update.component';
 import { FormsModule } from '@angular/forms';
+import { ContactNewComponent } from './contact-new/contact-new.component';
+import { ContactDeleteComponent } from './contact-delete/contact-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactHomeComponent,
     ContactDetailComponent,
-    ContactUpdateComponent
+    ContactUpdateComponent,
+    ContactNewComponent,
+    ContactDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatCardModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,4 +28,21 @@ export class ContactsService {
     const headers: HttpHeaders = new HttpHeaders();
     this.http.put(url,body,{headers}).subscribe();
   }
+
+  newContact(contact: any):void {
+    const url:string = 'http://localhost:30030/contacts/add';
+    const body = contact;
+    const headers: HttpHeaders = new HttpHeaders();
+    this.http.post(url,body,{headers}).subscribe();
+  }
+
+  deleteContact(delid: number): void{
+    const url:string = 'http://localhost:30030/contacts/delete';
+    const delbody = JSON.stringify({id:delid});
+    const options = {
+      body: delbody,
+      headers: new HttpHeaders()
+    };
+    this.http.delete(url,options).subscribe();
+  }
 }

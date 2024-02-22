@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from '../contacts.service';
 import { Route, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactDeleteComponent } from '../contact-delete/contact-delete.component';
 
 export interface ContactDTO {
   id: number;
@@ -23,10 +25,10 @@ const CONTACT_DATA: ContactDTO[] = [
 })
 export class ContactHomeComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'surname', 'lastname', 'phonenumber','email'];
+  displayedColumns: string[] = ['name', 'surname', 'lastname', 'phonenumber','email','actions'];
   contacts:any = [];
 
-  constructor(private contactsService: ContactsService, private router: Router) { }
+  constructor(private contactsService: ContactsService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.contactsService.getContacts().subscribe(data => {
@@ -36,5 +38,9 @@ export class ContactHomeComponent implements OnInit {
 
   openDetailForm(row: any){
     this.router.navigate(['/contact',row.id])
+  }
+
+  openDeleteDialog(delid: number):void{
+    const dilogRef = this.dialog.open(ContactDeleteComponent, {data: {contactId:delid}});
   }
 }
