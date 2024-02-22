@@ -21,4 +21,11 @@ export class ContactsService {
     const body = JSON.stringify({id:c_id});
     return this.http.post(url,body,{headers});
   }
+
+  updateContact(contact: any):void {
+    const url:string = 'http://localhost:30030/contacts/update';
+    const body = contact;
+    const headers: HttpHeaders = new HttpHeaders();
+    this.http.put(url,body,{headers}).subscribe();
+  }
 }

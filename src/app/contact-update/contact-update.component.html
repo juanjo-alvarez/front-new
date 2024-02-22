@@ -1,1 +1,35 @@
-<p>contact-update works!</p>
+<mat-card class="card">
+    <mat-card-title>Edit contact</mat-card-title>
+    <mat-card-content class="card-content">
+        <form (submit)="updateContact()">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" name="name" [(ngModel)]="contact.name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>First surname</mat-label>
+                <input matInput type="text" name="surname" [(ngModel)]="contact.surname">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Second surname</mat-label>
+                <input matInput type="text" name="lastname" [(ngModel)]="contact.lastname">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput type="text" name="phonenumber" [(ngModel)]="contact.phonenumber">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" name="email" [(ngModel)]="contact.email">
+            </mat-form-field>
+            <div class="buttons">
+                <button mat-raised-button color="primary" type="submit">
+                    <mat-icon>save</mat-icon>
+                </button>
+                <button mat-raised-button type="button" (click)="cancelChages()">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
